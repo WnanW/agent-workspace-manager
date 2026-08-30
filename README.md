@@ -37,6 +37,26 @@ bash agent-workspace-manager/install.sh
 
 ## Usage
 
+### Agent usage (natural language)
+
+This is a **skill**: after installing it to your agent's skills directory
+(OpenCode: `~/.config/opencode/skills/`, Claude Code: `~/.claude/skills/`,
+Hermes: `~/.hermes/skills/`), the agent loads `SKILL.md` automatically. You
+don't type any commands — just ask in natural language, for example:
+
+> "Create an isolated workspace on a new branch to fix this bug, and open it
+> in IDEA."
+>
+> "List my current workspaces."
+>
+> "Delete the workspace for the login feature, keep the branch."
+
+The agent will invoke the `ws` commands (or the Python script) itself. Note:
+the agent's commands rely on the `ws` wrappers, so `bash install.sh` must have
+been run once on the machine first.
+
+### Manual usage (CLI)
+
 ```bash
 # In your project directory:
 wscreate                    # create a workspace on master (auto-suffix if master is current)
